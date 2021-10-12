@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87685F5C-8BEF-465A-B1CC-4E8B3DD65854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sapsan.Modules.Operational</RootNamespace>
+    <AssemblyName>Sapsan.Modules.Operational</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\Sapsan.Modules.GenPlan\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7" />
+    <Reference Include="Sapsan2.Core">
+      <HintPath>..\SUVPP.MVP\bin\Debug\Sapsan2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sapsan2.Core.Contracts">
+      <HintPath>..\Sapsan2.Core.Contracts\bin\Debug\Sapsan2.Core.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextMenuItems\ContextMenuPreProjectContractItem.cs" />
+    <Compile Include="Controls\Admin\AdminOperationalControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminOperationalControl.Designer.cs">
+      <DependentUpon>AdminOperationalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OperationalMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OperationalMainControl.Designer.cs">
+      <DependentUpon>OperationalMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OperationalSpfoaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OperationalSpfoaControl.Designer.cs">
+      <DependentUpon>OperationalSpfoaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OperationalWorkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OperationalWorkControl.Designer.cs">
+      <DependentUpon>OperationalWorkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OperationalControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OperationalControl.Designer.cs">
+      <DependentUpon>OperationalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusEditorControl.Designer.cs">
+      <DependentUpon>StatusEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Configuration\OperationalConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalLineConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OPerationalSpfoaConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalSpfoaEditorConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalTypeTaskConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalWorkConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalWorkLineConfiguration.cs" />
+    <Compile Include="DAL\Configuration\OperationalEntityStatusConfiguration.cs" />
+    <Compile Include="DAL\Entity\OperationalLine.cs" />
+    <Compile Include="DAL\Entity\Operationals.cs" />
+    <Compile Include="DAL\Entity\OperationalSpfoa.cs" />
+    <Compile Include="DAL\Entity\OperationalSpfoaEditor.cs" />
+    <Compile Include="DAL\Entity\OperationalTypeTask.cs" />
+    <Compile Include="DAL\Entity\OperationalWork.cs" />
+    <Compile Include="DAL\Entity\OperationalWorkLine.cs" />
+    <Compile Include="DAL\Entity\OperationalEntityStatus.cs" />
+    <Compile Include="DependecyRegister.cs" />
+    <Compile Include="Dialogs\OperationalEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalEditDialog.Designer.cs">
+      <DependentUpon>OperationalEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OperationalLineEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalLineEditDialog.Designer.cs">
+      <DependentUpon>OperationalLineEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OperationalTypeTaskDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalTypeTaskDialog.Designer.cs">
+      <DependentUpon>OperationalTypeTaskDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OperationalWorkEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalWorkEditDialog.Designer.cs">
+      <DependentUpon>OperationalWorkEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OperationalEntityStatusEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalEntityStatusEditorDialog.Designer.cs">
+      <DependentUpon>OperationalEntityStatusEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PreProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PreProjectDialog.Designer.cs">
+      <DependentUpon>PreProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SpfoaEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SpfoaEditorDialog.Designer.cs">
+      <DependentUpon>SpfoaEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SpfoaPgDateEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SpfoaPgDateEditDialog.Designer.cs">
+      <DependentUpon>SpfoaPgDateEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\StatusEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StatusEditDialog.Designer.cs">
+      <DependentUpon>StatusEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OperationalEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OperationalEditorDialog.Designer.cs">
+      <DependentUpon>OperationalEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\OperationalEnum.cs" />
+    <Compile Include="Enums\OperationalRoleList.cs" />
+    <Compile Include="Enums\OperationalSpfoaDateTypeEnum.cs" />
+    <Compile Include="Enums\OperationalStatusEntityIdEnum.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Presenters\Contracts\IOperationalLinePresenter.cs" />
+    <Compile Include="Presenters\Contracts\IOperationalPresenter.cs" />
+    <Compile Include="Presenters\Contracts\IOperationalSpfoaPresenter.cs" />
+    <Compile Include="Presenters\Contracts\IOperationalWorkPresenter.cs" />
+    <Compile Include="Presenters\Contracts\IOperatonalSpfoaEditorPresenter.cs" />
+    <Compile Include="Presenters\Data\OperationalPresenterData.cs" />
+    <Compile Include="Presenters\Data\OperationalSpfoaEditorPresenterData.cs" />
+    <Compile Include="Presenters\Data\OperationalSpfoaPresenterData.cs" />
+    <Compile Include="Presenters\Data\OperationalWorkFullInfoPresenterData.cs" />
+    <Compile Include="Presenters\Data\OperationalWorkPresenterData.cs" />
+    <Compile Include="Presenters\Data\OperationLinePresenterData.cs" />
+    <Compile Include="Presenters\OperationalLinePresenter.cs" />
+    <Compile Include="Presenters\OperationalPresenter.cs" />
+    <Compile Include="Presenters\OperationalSpfoaEditorPresenter.cs" />
+    <Compile Include="Presenters\OperationalSpfoaPresenter.cs" />
+    <Compile Include="Presenters\OperationalWorkPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Contracts\IOperationalLineService.cs" />
+    <Compile Include="Services\Contracts\IOperationalService.cs" />
+    <Compile Include="Services\Contracts\IOperationalSpfoaService.cs" />
+    <Compile Include="Services\Contracts\IOperationalTypeTaskService.cs" />
+    <Compile Include="Services\Contracts\IOperationalWorkLineService.cs" />
+    <Compile Include="Services\Contracts\IOperationalWorkService.cs" />
+    <Compile Include="Services\Contracts\IOperationalEntityStatusService.cs" />
+    <Compile Include="Services\Contracts\IOperationalSpfoaEditorService.cs" />
+    <Compile Include="Services\Data\OperationalData.cs" />
+    <Compile Include="Services\Data\OperationalLineData.cs" />
+    <Compile Include="Services\Data\OperationalSpfoaData.cs" />
+    <Compile Include="Services\Data\OperationalSpfoaEditorData.cs" />
+    <Compile Include="Services\Data\OperationalTypeTaskData.cs" />
+    <Compile Include="Services\Data\OperationalWorkData.cs" />
+    <Compile Include="Services\Data\OperationalWorkLineData.cs" />
+    <Compile Include="Services\Data\OperationalEntityStatusData.cs" />
+    <Compile Include="Services\OperationalLineService.cs" />
+    <Compile Include="Services\OperationalService.cs" />
+    <Compile Include="Services\OperationalSpfoaService.cs" />
+    <Compile Include="Services\OperationalTypeTaskService.cs" />
+    <Compile Include="Services\OperationalWorkLineService.cs" />
+    <Compile Include="Services\OperationalWorkService.cs" />
+    <Compile Include="Services\OperationalEntityStatusService.cs" />
+    <Compile Include="Services\OperatonalSpfoaEditorService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Admin\AdminOperationalControl.resx">
+      <DependentUpon>AdminOperationalControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Admin\AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OperationalMainControl.resx">
+      <DependentUpon>OperationalMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OperationalSpfoaControl.resx">
+      <DependentUpon>OperationalSpfoaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OperationalWorkControl.resx">
+      <DependentUpon>OperationalWorkControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OperationalControl.resx">
+      <DependentUpon>OperationalControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatusEditorControl.resx">
+      <DependentUpon>StatusEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalEditDialog.resx">
+      <DependentUpon>OperationalEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalLineEditDialog.resx">
+      <DependentUpon>OperationalLineEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalTypeTaskDialog.resx">
+      <DependentUpon>OperationalTypeTaskDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalWorkEditDialog.resx">
+      <DependentUpon>OperationalWorkEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalEntityStatusEditorDialog.resx">
+      <DependentUpon>OperationalEntityStatusEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PreProjectDialog.resx">
+      <DependentUpon>PreProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SpfoaEditorDialog.resx">
+      <DependentUpon>SpfoaEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SpfoaPgDateEditDialog.resx">
+      <DependentUpon>SpfoaPgDateEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StatusEditDialog.resx">
+      <DependentUpon>StatusEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OperationalEditorDialog.resx">
+      <DependentUpon>OperationalEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sapsan.Modules.ProjectScheduler\Sapsan.Modules.ProjectScheduler.csproj">
+      <Project>{2042CC25-19D9-45F5-9745-0BECEF30E02D}</Project>
+      <Name>Sapsan.Modules.ProjectScheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SUVPP.Contracts\Sapsan2.Contracts.csproj">
+      <Project>{658DEFBE-C66B-4D3C-8A31-1E73A56330DA}</Project>
+      <Name>Sapsan2.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SUVPP.UI\SUVPP.UI.csproj">
+      <Project>{E00FA315-2DB4-48DA-A1F2-7578A48BA68B}</Project>
+      <Name>SUVPP.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TES.Fx\TES.Fx.csproj">
+      <Project>{B188CB84-BC61-4D14-BC3C-D7A9CEA4B7BF}</Project>
+      <Name>TES.Fx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
